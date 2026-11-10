@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#152b25">
+  <meta name="description" content="Частные дома до двух этажей из газоблоков с облицовкой ригельным кирпичом. Кировская область.">
+  <title>Dimon-Stroi 43 — Дом начинается с понимания</title>
+  <link rel="preload" href="assets/Manrope.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="assets/exterior-family.png" as="image">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#scene-title">К содержанию</a>
+  <main>
+    <section class="scroll-scene" aria-label="Послойная модель частного дома">
+      <div class="scene">
+        <header class="masthead">
+          <div class="brand-group"><a class="wordmark" href="#" aria-label="Dimon-Stroi 43, в начало">Dimon-Stroi <span>43</span></a><img class="construction-team" src="assets/construction-team.png" alt="" aria-hidden="true"></div>
+          <span class="region"><img class="region-map" src="assets/kirov.svg" alt="Контур Кировской области"> Кировская область</span>
+        </header>
+        <div class="hero">
+          <div class="intro">
+            <h1 id="scene-title">Дом начинается<br>с понимания</h1>
+            <p class="offer">Строим частные дома до двух этажей<br class="desktop-break"> из газоблоков с облицовкой<br class="desktop-break"> ригельным кирпичом.</p>
+            <button class="discuss-button" type="button" aria-expanded="false" aria-controls="discussion">Обсудить строительство <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"/></svg></button>
+            <div class="discussion" id="discussion" hidden>
+              <div class="discussion-heading"><h2>Каким вы видите свой дом?</h2><button class="close-discussion" type="button" aria-label="Закрыть обсуждение"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
+              <p id="notes-help">На публичной версии отправка заявок пока не подключена. Данные из этой формы никуда не передаются.</p>
+              <form id="lead-form"><label for="lead-name">Ваше имя</label><input id="lead-name" name="name" autocomplete="name" required minlength="2" maxlength="100"><label for="lead-contact">Телефон или Telegram</label><input id="lead-contact" name="contact" autocomplete="tel" required minlength="5" maxlength="150"><label for="project-notes">Ваши пожелания</label>
+              <textarea id="project-notes" name="notes" maxlength="2000" rows="3" placeholder="Площадь, участок, сколько нужно комнат…" aria-describedby="notes-help"></textarea><label class="consent" hidden style="display:none!important"><input type="checkbox" name="consent" required> Согласен на передачу указанных данных компании и сохранение в Google Таблице для обсуждения строительства.</label><button class="send-lead" type="submit" disabled>Отправка пока недоступна</button><p id="lead-status" role="status" aria-live="polite"></p></form>
+            </div>
+            <p class="intro-note">Снаружи — архитектура.<br>Внутри — продуманная конструкция.</p>
+          </div>
+          <figure class="model" aria-label="Концептуальная визуализация дома в перспективе">
+            <div class="model-images">
+              <img class="intro-house" src="assets/exterior-family.png" alt="Концептуальный дом с парковкой, автомобилем и семьёй" fetchpriority="high">
+              <img class="house-layer" src="assets/plan.png" alt="План-проект дома на чертеже" >
+              <img class="house-layer" src="assets/foundation-cutout.png" alt="" aria-hidden="true">
+              <img class="house-layer" src="assets/structure-cutout.png" alt="" aria-hidden="true">
+              <img class="house-layer" src="assets/interior-cutout.png" alt="" aria-hidden="true">
+              <img class="house-layer" src="assets/exterior-family.png" alt="" aria-hidden="true">
+              <div class="wipe-line" aria-hidden="true"></div>
+            </div>
+            <figcaption><span>От чертежа до готового дома.</span><span class="concept-label">Концептуальная модель</span></figcaption>
+          </figure>
+        </div>
+        <div class="scene-bottom">
+          <div class="layer-description" aria-live="polite" aria-atomic="true">
+            <span class="layer-counter">01 / 05</span>
+            <p class="layer-copy">План-проект<span>Планировка и архитектурное решение.</span></p>
+          </div>
+          <nav class="layer-nav" aria-label="Слои модели">
+            <button type="button" class="layer-button is-active" data-layer="0" aria-current="step"><span class="layer-index">01</span>План-проект</button>
+            <button type="button" class="layer-button" data-layer="1" ><span class="layer-index">02</span>Основание</button>
+            <button type="button" class="layer-button" data-layer="2" ><span class="layer-index">03</span>Конструкция</button>
+            <button type="button" class="layer-button" data-layer="3" ><span class="layer-index">04</span>Внутри дома</button>
+            <button type="button" class="layer-button" data-layer="4" ><span class="layer-index">05</span>Экстерьер</button>
+          </nav>
+          <p class="scroll-hint">Прокрутите, чтобы заглянуть глубже <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v17m-6-6 6 6 6-6"/></svg></p>
+        </div>
+      <p class="intro-scroll-cue">Прокрутите, чтобы познакомиться с домом <span aria-hidden="true">↓</span></p></div>
+    </section>
+    <footer class="prototype-end"><span>Dimon-Stroi 43</span><p>Вы посмотрели все слои.<br><span>Продолжение сайта готовится.</span></p><a href="#scene-title">К началу <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20V4m-6 6 6-6 6 6"/></svg></a></footer>
+  </main>
+  <noscript><p class="noscript-note">Для переключения слоёв и локального обсуждения включите JavaScript.</p></noscript>
+</body>
+</html>
