@@ -151,8 +151,6 @@
   render();
 })();
 
-// GitHub Pages hosts only the public interface. No requests are sent.
-document.querySelector('#lead-form').addEventListener('submit', event => {
- event.preventDefault();
- document.querySelector('#lead-status').textContent='Для отправки заявок требуется отдельный сервер. Данные не отправлены.';
-});
+const leadForm=document.querySelector('#lead-form');
+let pendingLead=null;
+leadForm.addEventListener('submit',async event=>{event.preventDefault();if(!leadForm.reportValidity())return;const button=leadForm.querySelector('[type=submit]'),status=document.querySelector('#lead-status');const data=new FormData(leadForm);const fields={name:data.get('name'),contact:data.get('contact'),notes:data.get('notes'),website:data.get('website')||'',consent:data.get('consent')==='on'};const fingerprint=JSON.stringify(fields);if(!pendingLead||pendingLead.fingerprint!==fingerprint)pendingLead={id:crypto.randomUUID(),fingerprint};button.disabled=true;status.textContent='Сохраняем заявку и отправляем уведомление…';try{const response=await fetch('https://dimon-stroi-43-leads.proud-root-3195.chatgpt.site/api/leads',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...fields,id:pendingLead.id}),signal:AbortSignal.timeout(50000)});const result=await response.json();if(!response.ok||!result.ok)throw new Error(result.error||'Не удалось подтвердить отправку.');status.textContent='Заявка сохранена в таблице и отправлена в Telegram. Спасибо!';leadForm.reset();pendingLead=null}catch(error){status.textContent=error.name==='TimeoutError'?'Ответ не получен. Повторите позже: номер заявки сохранён для защиты от повторной записи.':error.message}finally{button.disabled=false}});
